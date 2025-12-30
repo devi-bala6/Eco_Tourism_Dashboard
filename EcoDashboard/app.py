@@ -323,8 +323,16 @@ if destination != "Select a destination":
 else:
     center_lat, center_lon, zoom = 22.0, 79.0, 3.5
 
-st.pydeck_chart(pdk.Deck(map_style="mapbox://styles/mapbox/dark-v10" if st.session_state.theme == 'dark' else "mapbox://styles/mapbox/light-v10", initial_view_state=pdk.ViewState(latitude=center_lat, longitude=center_lon, zoom=zoom, pitch=40), layers=layers, tooltip={"text": "{name}"}))
+# Determine style based on theme
+# We use 'dark_no_labels' or 'light_no_labels' which Streamlit handles automatically without extra tokens
+current_style = "dark_no_labels" if st.session_state.theme == 'dark' else "light_no_labels"
 
+st.pydeck_chart(pdk.Deck(
+    map_style=None,  # Setting this to None lets Streamlit apply the default working map
+    initial_view_state=pdk.ViewState(latitude=center_lat, longitude=center_lon, zoom=zoom, pitch=40), 
+    layers=layers, 
+    tooltip={"text": "{name}"}
+))
 # --- CALCULATION RESULTS ---
 if destination != "Select a destination" and 'calculate_clicked' in locals() and calculate_clicked:
     dest_info = DESTINATIONS[destination]
@@ -548,4 +556,5 @@ else:
 # ============================================
 st.markdown("---")
 footer_html = f"""<div style="text-align: center; color: #666; padding: 60px; font-size: 1.2rem; font-weight: 500;"><p>🌿 <strong>ECO TOURISM DASHBOARD</strong> • {st.session_state.theme.title()} Mode</p><p>Made with ❤️ for a greener planet</p><p style="margin-top: 10px; font-size: 0.9rem;">Data sources: IRCTC, MoEFCC • Last updated: {datetime.now().strftime('%d %b %Y')}</p></div>"""
+
 st.markdown(footer_html, unsafe_allow_html=True)
