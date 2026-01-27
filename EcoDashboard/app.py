@@ -11,7 +11,7 @@ from math import radians, sin, cos, sqrt, atan2
 # 1. PAGE CONFIG (MUST BE FIRST)
 # ============================================
 st.set_page_config(
-    page_title="Eco Tourism Dashboard",
+    page_title="Eco Vihari",
     page_icon="🌍",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -186,7 +186,7 @@ st.markdown(apply_theme(st.session_state.theme), unsafe_allow_html=True)
 with st.sidebar:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0;">
-        <h2 style="margin-bottom: 5px; background: linear-gradient(90deg, #38ef7d, #11998e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🌿 ECO NET</h2>
+        <h2 style="margin-bottom: 5px; background: linear-gradient(90deg, #38ef7d, #11998e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🌿 ECO Vihari</h2>
         <p style="color: #bbb; font-size: 0.9rem;">Sustainable Travel Intelligence</p>
     </div>
     """, unsafe_allow_html=True)
@@ -258,7 +258,7 @@ header_html = f"""
 <div class="main-header">
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
-            <h1>🌍 ECO TOURISM DASHBOARD</h1>
+            <h1>🌍 ECO VIHARI</h1>
             <p style='color: #43e97b; font-size: 1.2rem; font-weight: 500;'>Plan sustainable. Travel responsibly. Save the planet.</p>
         </div>
         <div style="display: flex; gap: 15px;">
@@ -274,7 +274,7 @@ st.markdown(header_html, unsafe_allow_html=True)
 # --- INFO SECTION ---
 st.markdown("""
 <div class="glass-card" style="margin-top: 20px;">
-    <h3>🌱 What is Eco Net?</h3>
+    <h3>🌱 What is Eco Vihari?</h3>
     <p>
         This dashboard helps conscious travelers minimize their carbon footprint while maximizing savings.
         By analyzing distances between <strong>50+ Indian cities</strong> and <strong>23 top destinations</strong>,
@@ -555,6 +555,7 @@ else:
 # 11. FOOTER
 # ============================================
 st.markdown("---")
-footer_html = f"""<div style="text-align: center; color: #666; padding: 60px; font-size: 1.2rem; font-weight: 500;"><p>🌿 <strong>ECO TOURISM DASHBOARD</strong> • {st.session_state.theme.title()} Mode</p><p>Made with ❤️ for a greener planet</p><p style="margin-top: 10px; font-size: 0.9rem;">Data sources: IRCTC, MoEFCC • Last updated: {datetime.now().strftime('%d %b %Y')}</p></div>"""
+footer_html = f"""<div style="text-align: center; color: #666; padding: 60px; font-size: 1.2rem; font-weight: 500;"><p>🌿 <strong>ECO VIHARI</strong> • {st.session_state.theme.title()} Mode</p><p>Made with ❤️ for a greener planet</p><p style="margin-top: 10px; font-size: 0.9rem;">Data sources: IRCTC, MoEFCC • Last updated: {datetime.now().strftime('%d %b %Y')}</p></div>"""
 
 st.markdown(footer_html, unsafe_allow_html=True)
+
