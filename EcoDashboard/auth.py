@@ -156,7 +156,7 @@ def show_login_page():
     
     with col2:
         # Title & Subtitle inside the column (sits on the black layer via CSS)
-        st.markdown("<h1>🌿 Eco Tourism</h1>", unsafe_allow_html=True)
+        st.markdown("<h1>🌿 Eco Vihari</h1>", unsafe_allow_html=True)
         st.markdown("<p>Begin your sustainable journey</p>", unsafe_allow_html=True)
         
         tab1, tab2, tab3 = st.tabs(["🔒 Login", "📝 Sign Up", "🔑 Forgot"])
@@ -204,4 +204,5 @@ def show_login_page():
                 if reset_password(reset_user, reset_pass):
                     st.success("Password Updated! Please Login.")
                 else:
+
                     st.error("Username not found.")
